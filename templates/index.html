@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% load static %}
+{% block content %}
+  <!-- hero section -->
+  <div class="container-fluid hero-section p-5">
+    <div class="row">
+      <!-- Left Text Column -->
+      <div class="col-md-6 hero-text">
+        <h1 class="display-4">Unlock Your Coding Potential with CodeQuantum</h1>
+        <p class="lead">Master coding with tailored courses, expert blogs, and community support.</p>
+        <a href="#" class="btn btn-lg m-2 get-started">Get Started</a>
+      </div>
+      <!-- Right Image Column -->
+      <div class="col-md-6 hero-img text-center">
+        <img src="{% static 'images/hero.jpg' %}" alt="Hero Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="container py-5">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <i class="bi bi-laptop fs-1 text-primary"></i>
+        <h3 class="my-3">Tailored Courses</h3>
+        <p>Learn coding with courses designed to fit your skill level and interests.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-people fs-1 text-primary"></i>
+        <h3 class="my-3">Community Support</h3>
+        <p>Get support from our active coding community and peer mentors.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-book fs-1 text-primary"></i>
+        <h3 class="my-3">Expert Blogs</h3>
+        <p>Stay updated with the latest trends and tips from industry experts.</p>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Courses Section -->
+<div class="container py-5">
+  <div class="text-center mb-5">
+    <h2>Our Popular Courses</h2>
+    <p>Choose from a wide range of expertly designed courses.</p>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-4 course">
+      <div class="card h-100">
+        <img src="{% static 'images/datastructure.jpg' %}" class="card-img-top" alt="Course 1">
+        <div class="card-body">
+          <h5 class="card-title">DSA</h5>
+          <p class="card-text">Learn Data Structures and algorithms for coding interviews.</p>
+          <a href="#" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 course">
+      <div class="card h-100">
+        <img src="{% static 'images/datascience.jpg' %}" class="card-img-top" alt="Course 2">
+        <div class="card-body">
+          <h5 class="card-title">Data Science</h5>
+          <p class="card-text">Master data analysis, machine learning, and Python programming.</p>
+          <a href="#" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 course">
+      <div class="card h-100">
+        <img src="{% static 'images/djangoimg.avif' %}" class="card-img-top" alt="Course 3">
+        <div class="card-body">
+          <h5 class="card-title">Django</h5>
+          <p class="card-text">Master Django to make powerful backend for webpages.</p>
+          <a href="#" class="btn btn-primary">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

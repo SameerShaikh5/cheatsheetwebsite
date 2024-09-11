@@ -1,0 +1,67 @@
+{% extends "layout.html" %} {%load static%} {% block content %}
+<!-- Toggle Sidebar Button -->
+<button class="btn toggle-sidebar">
+  <i class="bi bi-list"></i>
+</button>
+
+<!-- Wrapper -->
+<div class="wrapper">
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="p-4">
+      <h5 class="mt-4 coursename">{{course.course_name}}</h5>
+      <ul class="list-unstyled">
+        {% for topic in course_topics %}
+        <li class="py-1 px-1">
+          <a href="{% url 'courses:course' topic.course_name topic.id %}">{{topic.topic}}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Content Area -->
+  <div class="content my-2 d-flex flex-column align-items-center" id="content">
+    <h1 class="my-3">{{course.topic}}</h1>
+    <div class="my-3 topic-content">{{course.body | safe }}</div>
+
+    <!-- Button Row -->
+    <div class="row mt-5 w-75">
+      <div class="col text-start">
+        {% if prev_topic %}
+        <button class="btn prev-next-btn">
+          <a href="{% url 'courses:course' prev_topic.course_name prev_topic.id %}">Prev</a>
+        </button>
+        {% else %}
+        <button class="btn prev-next-btn" disabled>Prev</button>
+        {% endif %}
+      </div>
+      <div class="col text-end">
+        {% if next_topic %}
+        <button class="btn prev-next-btn">
+          <a href="{% url 'courses:course' next_topic.course_name next_topic.id %}">Next</a>
+        </button>
+        {% else %}
+        <button class="btn prev-next-btn" disabled>Next</button>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Custom JS -->
+<script>
+  document
+    .querySelector(".toggle-sidebar")
+    .addEventListener("click", function () {
+      document.getElementById("sidebar").classList.toggle("collapsed");
+      document.getElementById("content").classList.toggle("collapsed");
+    });
+  document.addEventListener("DOMContentLoaded", (event) => {
+    hljs.highlightAll();
+  });
+</script>
+{% endblock %}

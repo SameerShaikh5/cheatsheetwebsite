@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %}Blogs{% endblock %}
+{% load static %}
+{% block content %}
+  <!-- bloglist -->
+  <div class="container mt-5">
+    {% for blog in blogs %}
+    <div class="box">
+      <h3 class="title"><a href="{% url 'post' slug=blog.slug %}" class="link">{{blog.name}}</a></h3>
+      <p>Posted on {{blog.date}}</p>
+    </div>
+    <hr>
+    {% endfor %}
+  </div>
+{% endblock %}

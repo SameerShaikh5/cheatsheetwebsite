@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    font-family: "Sora";
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: white !important;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: #7A1CAC !important;
+    font-size: 1.7rem;
+    font-family: "Sora", sans-serif;
+    font-weight: 600;
+}
+
+.nav-link {
+    font-size: 16px;
+    font-family: "Sora", sans-serif;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: #2E073F !important;
+    transition: color 0.3s ease;
+}
+
+/* Underline animation */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: darkviolet;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+
+/*hero section styling*/
+.hero-section {
+    height: 550px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+/* Responsive Get Started Button */
+.get-started {
+    width: 40%;
+    /* Set width for larger screens */
+    padding: 10px;
+    background-color: #AD49E1;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.get-started:hover {
+    background-color: #8D36C0;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        margin: 3.5rem 0px;
+    }
+
+    .course {
+        margin: 15px 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .get-started {
+        width: 100%;
+        /* Full width button on extra small screens */
+        padding: 14px 0;
+    }
+}
+
+
+
+/* Sidebar */
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #eeeeee;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.collapsed {
+    width: 0;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.content.collapsed {
+    margin-left: 0;
+}
+
+/* Toggle button for sidebar */
+.toggle-sidebar {
+    position: fixed;
+    top: 75px;
+    left: 24px;
+    z-index: 1100;
+    background-color: #EBD3F8;
+}
+
+.list-unstyled li:hover {
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.list-unstyled li a {
+    text-decoration: none;
+    color: black;
+}
+
+.coursename {
+    color: #2E073F;
+}
+
+.topic-content {
+    font-size: 1rem;
+    width: 80%;
+}
+
+.prev-next-btn {
+    background-color: #7A1CAC;
+}
+
+.prev-next-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.prev-next-btn:hover {
+    background-color: #2E073F !important;
+    color: white;
+}
+
+.course{
+    width: 19rem;
+}
+
+
+/* blogs or bloglist */
+.link{
+    text-decoration: none;
+}
+
+
+
+/* Footer styling */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    z-index: 5;
+}
